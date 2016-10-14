@@ -17,7 +17,7 @@ function UpdateYumRepo() {
 }
 
 function InstallTools() {
-    yum install git vim wget net-tools tcpdump -y
+    yum install tmux git vim wget net-tools tcpdump -y
 }
 
 function FishConfiguration() {
