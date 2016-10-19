@@ -10,7 +10,9 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
 
   config.vm.provider "virtualbox" do |vb|
+    vb.cpus = "4"
     vb.memory = "1024"
+    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000 ]
   end
 
   config.vm.provision "file", source: "configurations", destination: "/tmp/configurations"

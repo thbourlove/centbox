@@ -16,8 +16,13 @@ function UpdateYumRepo() {
     fi
 }
 
+function InstallEpel() {
+    yum install epel-release -y
+    yum install htop -y
+}
+
 function InstallTools() {
-    yum install tmux git vim wget net-tools tcpdump -y
+    yum install tmux git vim wget net-tools tcpdump cmake clang gcc automake gcc-c++ kernel-devel python-devel python3-devel -y
 }
 
 function FishConfiguration() {
@@ -55,6 +60,7 @@ function CleanConfigurations() {
 }
 
 UpdateYumRepo
+InstallEpel
 InstallTools
 FishConfiguration
 GitConfigurations
